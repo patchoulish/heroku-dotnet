@@ -1,0 +1,58 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFrameworks>netstandard2.1;net6.0</TargetFrameworks>
+		<RootNamespace>Heroku</RootNamespace>
+		<LangVersion>latest</LangVersion>
+
+		<IsPackable>true</IsPackable>
+		<AssemblyName>heroku-dotnet</AssemblyName>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+
+		<!-- Project details -->
+		<Title>heroku-dotnet</Title>
+		<Version>0.1.0</Version>
+		<Description>A .NET library for interacting with the Heroku API</Description>
+		<Copyright>Copyright (c) 2024 Patchouli (self@patchouli.sh)</Copyright>
+		<Authors>Patchouli (self@patchouli.sh)</Authors>
+
+		<!-- Project repository details -->
+		<RepositoryUrl>https://github.com/patchoulish/kagi-dotnet</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+	</PropertyGroup>
+
+	<!-- NuGet package properties -->
+	<PropertyGroup>
+		<PackageId>heroku-dotnet</PackageId>
+		<PackageVersion>0.1.0</PackageVersion>
+		<PackageDescription>A .NET library for interacting with the Heroku API</PackageDescription>
+		<PackageProjectUrl>https://github.com/patchoulish/kagi-dotnet</PackageProjectUrl>
+		<PackageTags>dotnet;api;heroku</PackageTags>
+		<PackageReadmeFile>readme.md</PackageReadmeFile>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!-- Include a copy of the project readme in the NuGet package -->
+		<None Include="..\..\readme.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+			<Visible>False</Visible>
+		</None>
+
+		<!-- Include a copy of the project license in the NuGet package -->
+		<None Include="..\..\license.txt">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+			<Visible>False</Visible>
+		</None>
+	</ItemGroup>
+
+	<!-- Init keyword support for older compiler versions -->
+	<ItemGroup>
+		<PackageReference Include="IsExternalInit" Version="1.0.3">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+</Project>
